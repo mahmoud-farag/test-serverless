@@ -3,7 +3,7 @@ const mongoose = require('mongoose');
 const {getParamByKey, buildSSMParams,} = require('./buildSSMParams');
 
 let connection = null;
-  // const URL= `mongodb+srv://admin:TFSoc6ajDrn3M0J1@taskmanagerdb.rd2ff.mongodb.net/serverless?retryWrites=true&w=majority`;
+  // const URL= `mongodb+srv://<>:<>@taskmanagerdb.rd2ff.mongodb.net/serverless?retryWrites=true&w=majority`;
 
 const connect = async () => {
 
