@@ -1,0 +1,60 @@
+  service: CRUD-API
+  frameworkVersion: '3'
+
+  provider:
+    name: aws
+    runtime: nodejs18.x
+    environment:
+      accessKeyId: ${param:accessKeyId}
+      secretAccessKey: ${param:secretAccessKey}
+    layers:
+      - arn:aws:lambda:us-east-1:577286404598:layer:Dependencies:3
+
+  functions:
+    getuser:
+      handler: ./src/functions/getuser.getuser
+      # layers:
+      #   - arn:aws:lambda:us-east-1:577286404598:layer:Dependencies:3
+      events: 
+        - httpApi:
+            path: /getuser
+            method: get
+    listUsers:
+      handler: ./src/functions/listUsers.listUsers
+      # layers:
+      #   - arn:aws:lambda:us-east-1:577286404598:layer:Dependencies:3
+      events: 
+        - httpApi:
+            path: /listUsers
+            method: get
+    updateUser:
+      handler: ./src/functions/updateUser.updateUser
+      # layers:
+      #   - arn:aws:lambda:us-east-1:577286404598:layer:Dependencies:3
+      events: 
+        - httpApi:
+            path: /updateUser
+            method: post
+    createUser:
+      handler: ./src/functions/createUser.createUser
+      # layers:
+      #   - arn:aws:lambda:us-east-1:577286404598:layer:Dependencies:3
+      events: 
+        - httpApi:
+            path: /createUser
+            method: post
+    deleteUser:
+      handler: ./src/functions/deleteUser.deleteUser
+      # layers:
+      #   - arn:aws:lambda:us-east-1:577286404598:layer:Dependencies:3
+      events: 
+        - httpApi:
+            path: /deleteUser
+            method: post
+
+
+  layers:
+    Dependencies:
+      path: ./layer
+      compatibleRuntimes:
+        - nodejs18.x

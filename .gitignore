@@ -1,0 +1,47 @@
+# Node.js
+node_modules/
+npm-debug.log
+yarn-error.log
+
+# IDEs and editors
+.idea/
+.vscode/
+*.sublime-project
+*.sublime-workspace
+
+# Operating System files
+Thumbs.db
+.DS_Store
+ehthumbs.db
+Desktop.ini
+
+# Compiled files
+*.min.js
+*.min.css
+*.bundle.js
+*.bundle.css
+
+# Logs and databases
+*.log
+*.sqlite
+*.db
+*.log.*
+
+# Dependency lock files
+yarn.lock
+package-lock.json
+
+# Production build folder
+/dist
+
+# Serverless Framework
+.serverless/
+.serverless-debug/*
+
+# AWS Lambda
+*.zip
+
+# Other
+.env
+
+./layer/nodejs
